@@ -4,6 +4,9 @@ import com.bancodigital.Conta.Conta;
 import com.bancodigital.Conta.StatusConta;
 import com.bancodigital.banco.Banco;
 import com.bancodigital.cliente.Cliente;
+import com.bancodigital.movimentacao.Movimentacao;
+import com.bancodigital.movimentacao.TipoTransacao;
+import java.time.LocalDateTime;
 
 import java.math.BigDecimal;
 
@@ -275,7 +278,35 @@ public class App {
         //__________________________________________________________________________________________________//
 
 
+        Movimentacao movimentacao = new Movimentacao(
+                TipoTransacao.DEPOSITO,
+                new BigDecimal("200.00"),
+                LocalDateTime.now(),
+                conta,
+                null
+        );
 
+        conta.adicionarMovimentacao(movimentacao);
+
+        System.out.println();
+        System.out.println();
+
+
+        System.out.println("Quantidade de movimentações: " + conta.getQuantidadeMovimentacoes());
+
+        System.out.println();
+
+        Movimentacao novaMovimentacao = new Movimentacao(
+                TipoTransacao.DEPOSITO,
+                new BigDecimal("500.00"),
+                LocalDateTime.now(),
+                conta,
+                null
+        );
+
+        conta.adicionarMovimentacao(movimentacao);
+
+        System.out.println("Quantidade de movimentações: " + conta.getQuantidadeMovimentacoes());
 
 
 

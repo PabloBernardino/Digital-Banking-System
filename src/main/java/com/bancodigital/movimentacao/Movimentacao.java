@@ -14,6 +14,10 @@ public class Movimentacao {
     private Conta contaDestinatario;
 
     public TipoTransacao getTipoTransacao() {return tipoTransacao;}
+    public BigDecimal getValor() {return valor;}
+    public LocalDateTime getDataHora() {return dataHora;}
+    public Conta getContaOrigem() {return contaOrigem;}
+    public Conta getContaDestinatario() {return contaDestinatario;}
 
     public Movimentacao(TipoTransacao tipoTransacaoInit, BigDecimal valorInit,
                         LocalDateTime dataHoraInit, Conta contaOrigemInit, Conta contaDestinatarioInit) {
@@ -24,5 +28,6 @@ public class Movimentacao {
         contaOrigem = contaOrigemInit;
         contaDestinatario = contaDestinatarioInit;
     }
+
 
 }

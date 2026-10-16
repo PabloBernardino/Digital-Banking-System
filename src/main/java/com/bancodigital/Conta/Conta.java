@@ -1,8 +1,10 @@
 package com.bancodigital.Conta;
 
 import com.bancodigital.cliente.Cliente;
-
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import com.bancodigital.movimentacao.Movimentacao;
 
 public class Conta {
 
@@ -12,6 +14,7 @@ public class Conta {
     private BigDecimal saldo;
     private Cliente cliente;
     private StatusConta status;
+    private List<Movimentacao> movimentacoes;
 
 
     public Conta (int idInit, String numeroInit, String agenciaInit,
@@ -22,7 +25,7 @@ public class Conta {
         saldo = saldoInit;
         cliente = clienteInit;
         status = StatusConta.ATIVA;
-
+        this.movimentacoes = new ArrayList<>();
 
     }
 
@@ -145,6 +148,19 @@ public class Conta {
             System.out.println("Conta ativa com sucesso");
         }
     }
+
+    public void adicionarMovimentacao(Movimentacao movimentacao) {
+
+        this.movimentacoes.add(movimentacao);
+    }
+
+    public int getQuantidadeMovimentacoes() {
+        return this.movimentacoes.size();
+    }
+
+
+
+
 
 }
 
