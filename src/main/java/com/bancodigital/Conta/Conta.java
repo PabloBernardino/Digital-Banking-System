@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import com.bancodigital.movimentacao.Movimentacao;
+import java.util.Objects;
 
 public class Conta {
 
@@ -151,7 +152,9 @@ public class Conta {
 
     public void adicionarMovimentacao(Movimentacao movimentacao) {
 
+        Objects.requireNonNull(movimentacao);
         this.movimentacoes.add(movimentacao);
+
     }
 
     public int getQuantidadeMovimentacoes() {

@@ -288,10 +288,6 @@ public class App {
 
         conta.adicionarMovimentacao(movimentacao);
 
-        System.out.println();
-        System.out.println();
-
-
         System.out.println("Quantidade de movimentações: " + conta.getQuantidadeMovimentacoes());
 
         System.out.println();
@@ -304,9 +300,11 @@ public class App {
                 null
         );
 
-        conta.adicionarMovimentacao(movimentacao);
+        conta.adicionarMovimentacao(novaMovimentacao);
 
         System.out.println("Quantidade de movimentações: " + conta.getQuantidadeMovimentacoes());
+
+
 
 
 
